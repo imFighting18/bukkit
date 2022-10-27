@@ -67,9 +67,11 @@
     <dependencies>
         <dependency>
             <groupId>org.spigotmc</groupId>
-            <artifactId>spigot-api</artifactId>
+            <artifactId>spigot</artifactId>
             <version>1.8.8-R0.1-SNAPSHOT</version>
-            <scope>provided</scope>
+            <systemPath>${project.basedir}/src/main/resources/spigot-1.8.8-R0.1-SNAPSHOT.jar</systemPath>
+            <type>jar</type>
+            <scope>system</scope>
         </dependency>
     </dependencies>
 </project>
