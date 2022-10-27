@@ -2,6 +2,7 @@ package com.imfighting.tutorial;
 
 import com.imfighting.commands.ConfigCommand;
 import com.imfighting.commands.HealthCommand;
+import com.imfighting.commands.TestCommand;
 import com.imfighting.commands.TesteCommand;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -18,7 +19,7 @@ public final class Main extends JavaPlugin implements Listener {
         getConfig().options().copyDefaults();
         saveDefaultConfig();
         Bukkit.getPluginManager().registerEvents(this, this);
-        getCommand("config").setExecutor(new ConfigCommand(this));
+        getCommand("test").setExecutor(new TestCommand());
     }
 
    /* @EventHandler
