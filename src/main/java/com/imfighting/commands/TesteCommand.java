@@ -12,11 +12,14 @@ public class TesteCommand implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 
         if (sender instanceof Player) {
-            if (args.length == 1) {
+            ((Player) sender).sendMessage("No, this is consoly only!");
+            /*if (args.length == 1) {
                 if (args[0].equalsIgnoreCase("hello")) {
                     ((Player) sender).sendMessage("Hello my friend!");
                 }
-            }
+            }*/
+        } else {
+            sender.sendMessage("Olá, você digitou no console!");
         }
 
         return false;
