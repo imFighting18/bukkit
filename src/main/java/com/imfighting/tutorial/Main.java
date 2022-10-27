@@ -1,5 +1,6 @@
 package com.imfighting.tutorial;
 
+import com.imfighting.commands.ConfigCommand;
 import com.imfighting.commands.HealthCommand;
 import com.imfighting.commands.TesteCommand;
 import org.bukkit.Bukkit;
@@ -14,9 +15,10 @@ public final class Main extends JavaPlugin implements Listener {
 
     @Override
     public void onEnable() {
+        getConfig().options().copyDefaults();
+        saveDefaultConfig();
         Bukkit.getPluginManager().registerEvents(this, this);
-
-        //getCommand("test").setExecutor(new TesteCommand());
+        getCommand("config").setExecutor(new ConfigCommand(this));
     }
 
    /* @EventHandler
