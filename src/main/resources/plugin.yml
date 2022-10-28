@@ -5,3 +5,4 @@ authors: [ imFighting ]
 description: Plugin tutorial
 commands:
   test:
+  vanish:
