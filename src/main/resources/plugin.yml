@@ -4,5 +4,4 @@ main: com.imfighting.tutorial.Main
 authors: [ imFighting ]
 description: Plugin tutorial
 commands:
-  test:
-  vanish:
+  punish:
