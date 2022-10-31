@@ -3,5 +3,6 @@ version: '${project.version}'
 main: com.imfighting.tutorial.Main
 authors: [ imFighting ]
 description: Plugin tutorial
+depend: [NoteBlockAPI]
 commands:
-  punish:
+  giverole:
