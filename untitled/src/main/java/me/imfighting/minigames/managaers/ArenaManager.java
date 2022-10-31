@@ -26,6 +26,7 @@ public class ArenaManager {
                     (float) config.getDouble("arenas." + str + ".pitch")
             )));
         }
+
     }
 
     public List<Arena> getArenas() {

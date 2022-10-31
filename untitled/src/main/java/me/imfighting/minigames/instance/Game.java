@@ -1,6 +1,7 @@
 package me.imfighting.minigames.instance;
 
 import me.imfighting.minigames.GameState;
+import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 
 import java.util.HashMap;
@@ -20,8 +21,13 @@ public class Game {
         arena.setState(GameState.LIVE);
         arena.sendMessage("§aO jogo foi iniciado, seu objetivo é quebrar 20 blocos! Boa sorte!");
 
+        for (UUID uuid : arena.getKits().keySet()) {
+            arena.getKits().get(uuid).onStart(Bukkit.getPlayer(uuid));
+        }
+
         for (UUID uuid : arena.getPlayers()) {
             points.put(uuid, 0);
+            Bukkit.getPlayer(uuid).closeInventory();
         }
     }
 

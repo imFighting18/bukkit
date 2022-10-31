@@ -3,6 +3,7 @@ package me.imfighting.minigames.command;
 import me.imfighting.minigames.GameState;
 import me.imfighting.minigames.Minigames;
 import me.imfighting.minigames.instance.Arena;
+import me.imfighting.minigames.kit.KitUI;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -26,6 +27,17 @@ public class ArenaCommand implements CommandExecutor {
                 for (Arena arena : minigames.getArenaManager().getArenas()) {
                     player.sendMessage("- " + arena.getId() + "(" + arena.getState().name() + ")");
                 }
+            } else if (args.length == 1 && args[0].equalsIgnoreCase("kit")) {
+
+                Arena arena = minigames.getArenaManager().getArena(player);
+                if (arena != null) {
+                    if (arena.getState() != GameState.LIVE) {
+                        new KitUI(player);
+                    }
+                } else {
+                    player.sendMessage("§cVocê não está na arena!");
+                }
+
 
             } else if (args.length == 1 && args[0].equalsIgnoreCase("leave")) {
                 Arena arena = minigames.getArenaManager().getArena(player);
@@ -67,7 +79,6 @@ public class ArenaCommand implements CommandExecutor {
                 player.sendMessage("§cUso inválido!");
             }
         }
-
 
 
         return false;

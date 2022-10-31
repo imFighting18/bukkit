@@ -14,6 +14,7 @@ public class ConfigManager {
         minigames.saveDefaultConfig();
     }
 
+
     public static int getRequeriedPlayers() {
         return config.getInt("required-players");
     }

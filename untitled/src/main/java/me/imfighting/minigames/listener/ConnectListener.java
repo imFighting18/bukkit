@@ -20,7 +20,6 @@ public class ConnectListener implements Listener {
     public void onJoin(PlayerJoinEvent e) {
 
         e.getPlayer().teleport(ConfigManager.getLobbySpawn());
-
     }
 
     @EventHandler
